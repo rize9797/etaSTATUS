@@ -1,0 +1,78 @@
+{
+  "fetchedAt": null,
+  "sources": {
+    "ps5Support": "https://www.playstation.com/en-us/support/hardware/ps5/system-software-info/",
+    "ps4Support": "https://www.playstation.com/en-us/support/hardware/ps4/system-software-info/",
+    "ps5Updatelist": "http://fus01.ps5.update.playstation.net/update/ps5/official/tJMRE80IbXnE9YuG0jzTXgKEjIMoabr6/list/us/updatelist.xml",
+    "ps4Updatelist": "http://fus01.ps4.update.playstation.net/update/ps4/list/us/ps4-updatelist.xml",
+    "psnScea": "https://status.playstation.com/data/statuses/region/SCEA.json",
+    "mewxReadme": "https://raw.githubusercontent.com/MewX/ps5-official-firmware-list/main/README.md"
+  },
+  "psn": {
+    "region": "SCEA",
+    "operational": null,
+    "services": [],
+    "checkedAt": null
+  },
+  "ps5": {
+    "latest": {
+      "version": "pending",
+      "short": null,
+      "build": null,
+      "size": null,
+      "sha256": null,
+      "released": null,
+      "releasedVia": null,
+      "notes": "Run npm run update to fetch live data."
+    },
+    "minimum": {
+      "version": null,
+      "raw": null
+    },
+    "previous": {
+      "version": "pending",
+      "short": null,
+      "build": null,
+      "size": null,
+      "sha256": null,
+      "released": null,
+      "releasedVia": null,
+      "notes": "Run npm run update to fetch live data.",
+      "psn": "unknown",
+      "reason": "No snapshot yet."
+    },
+    "history": [],
+    "updatelist": {
+      "label": null,
+      "updVersion": null
+    }
+  },
+  "ps4": {
+    "latest": {
+      "version": "pending",
+      "size": null,
+      "build": null,
+      "sha256": null,
+      "released": null,
+      "releasedVia": null,
+      "notes": "Run npm run update to fetch live data."
+    },
+    "minimum": {
+      "version": null,
+      "raw": null
+    },
+    "previous": {
+      "version": "pending",
+      "size": null,
+      "build": null,
+      "sha256": null,
+      "released": null,
+      "releasedVia": null,
+      "notes": "Run npm run update to fetch live data.",
+      "psn": "unknown",
+      "reason": "No snapshot yet."
+    },
+    "history": []
+  },
+  "errors": []
+}

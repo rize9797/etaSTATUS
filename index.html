@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="PS5 and PS4 firmware history with PSN sign-in status per version.">
+<meta name="color-scheme" content="dark light">
+<title>etaSTATUS: PSN sign-in per version</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23137633'/%3E%3Cpath d='M9 21.5 16 8l7 13.5h-4.2L16 15.4l-2.8 6.1z' fill='white'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <div class="wrap topbar-in">
+    <div class="brand">
+      <span class="brand-name">etaSTATUS <span class="brand-sub">PSN sign-in per version</span></span>
+    </div>
+    <div class="topbar-right">
+      <span id="clock" class="clock" title="Current UTC time">--:--:-- UTC</span>
+      <button id="theme" type="button" aria-label="Toggle light mode">light</button>
+      <button id="recheck" type="button">Recheck live</button>
+    </div>
+  </div>
+</header>
+
+<div id="psn-banner" class="psn-banner" role="status">
+  <div class="wrap psn-in"><span id="psn-dot" class="dot pending" aria-hidden="true"></span><span id="psn-text">Loading status snapshot…</span></div>
+</div>
+<div class="alert" role="alert"><div class="wrap alert-in">DO NOT UPDATE ABOVE 13.60, JUST WAIT!!</div></div>
+
+<main id="main">
+<div class="wrap">
+
+  <p class="lede">Full PS5 and PS4 firmware history. The PSN column shows if Sony still lets that version sign in, based on the forced minimum in the US updatelist. Refresh with <code>node fetch-live.mjs</code>.</p>
+  <p id="live-line" class="live-line">Snapshot: loading…</p>
+
+  <section aria-labelledby="h-ps5" class="console">
+    <div class="console-head">
+      <h2 id="h-ps5">PlayStation 5</h2>
+      <span id="ps5-live" class="src-tag">snapshot</span>
+    </div>
+    <p class="latest">Latest: <span id="ps5-latest" class="ver">…</span></p>
+    <dl class="meta" id="ps5-meta"></dl>
+    <div id="ps5-verdict" class="verdict"></div>
+    <h3>Recent firmware history</h3>
+    <div class="table-wrap"><table id="ps5-table">
+      <thead><tr><th scope="col">Version</th><th scope="col">PSN</th><th scope="col">Released</th><th scope="col">Size</th><th scope="col">Sony patch note</th></tr></thead>
+      <tbody></tbody>
+    </table></div>
+  </section>
+
+  <section aria-labelledby="h-ps4" class="console">
+    <div class="console-head">
+      <h2 id="h-ps4">PlayStation 4</h2>
+      <span id="ps4-live" class="src-tag">snapshot</span>
+    </div>
+    <p class="latest">Latest: <span id="ps4-latest" class="ver">…</span></p>
+    <dl class="meta" id="ps4-meta"></dl>
+    <div id="ps4-verdict" class="verdict"></div>
+    <h3>Recent firmware history</h3>
+    <div class="table-wrap"><table id="ps4-table">
+      <thead><tr><th scope="col">Version</th><th scope="col">PSN</th><th scope="col">Released</th><th scope="col">Size</th><th scope="col">Sony patch note</th></tr></thead>
+      <tbody></tbody>
+    </table></div>
+  </section>
+
+  <section aria-labelledby="h-method" class="method">
+    <h2 id="h-method">How you read the PSN column</h2>
+    <ol>
+      <li>Sony publishes a US updatelist per console with a forced minimum. You can sign in on that version or newer.</li>
+      <li>You see <strong>online</strong> when the row meets the minimum and PSN shows no outage.</li>
+      <li>Run the fetcher to update the minimum. The column flips on its own.</li>
+    </ol>
+  </section>
+
+  <section aria-labelledby="h-src" class="sources">
+    <h2 id="h-src">Sources</h2>
+    <table id="src-table">
+      <thead><tr><th scope="col">Source</th><th scope="col">Used for</th><th scope="col">Link</th></tr></thead>
+      <tbody></tbody>
+    </table>
+    <p class="muted small">Unofficial page. Not affiliated with Sony Interactive Entertainment. PSN status reflects the US (SCEA) region feed.</p>
+    <noscript><p>This page needs JavaScript to render the fetched snapshot.</p></noscript>
+  </section>
+
+</div>
+</main>
+
+<footer>
+  <div class="wrap foot-in">
+    <span>etaSTATUS</span>
+    <span id="foot-fetched" class="muted"></span>
+  </div>
+</footer>
+
+<script src="./app.js" defer></script>
+</body>
+</html>
